@@ -1,0 +1,16 @@
+
+################################
+
+#           ENDPOINTS
+
+################################
+
+
+#Base
+GET {{url}}/v1/hello
+###
+
+#Protected
+GET {{url}}/v1/protected/hello
+x-api-key: {{apiKey}}
+###
