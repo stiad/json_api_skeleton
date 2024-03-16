@@ -22,7 +22,7 @@ func NewServer() *Server {
 	router.GET("/health", func(c *gin.Context) { c.Status(http.StatusNoContent) })
 
 	s := Server{router}
-	routes.RegisterV1(s.router)
+	routes.Register(s.router)
 
 	return &s
 }

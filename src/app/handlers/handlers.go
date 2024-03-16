@@ -1,4 +1,4 @@
-package v1
+package handlers
 
 import (
 	"github.com/gin-gonic/gin"
@@ -6,9 +6,5 @@ import (
 )
 
 func HandleHelloWorld(c *gin.Context) {
-	c.JSON(http.StatusOK, gin.H{"msg": "Hello World"})
-}
-
-func HandleProtectedHelloWorld(c *gin.Context) {
 	c.JSON(http.StatusOK, gin.H{"msg": "Hello World"})
 }
