@@ -17,8 +17,10 @@
 
 
 to run this project:
-```
-$ API_KEY=somekey go run main.go
-```
+> [!TIP]
+>>`API_KEY=somekey go run main.go`
 
 
+to run tests
+> [!TIP]
+>>`go test ./src/app/tests/...`

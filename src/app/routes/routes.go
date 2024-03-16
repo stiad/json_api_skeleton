@@ -7,8 +7,11 @@ import (
 )
 
 func Register(router *gin.Engine) {
-	// v1
+	// v1/
 	v1g := router.Group("/v1")
 	v1g.GET("/hello", handlers.HandleHelloWorld)
-	v1g.GET("/protected/hello", middleware.ApiKeyAuth(), handlers.HandleHelloWorld)
+
+	// v1/protected
+	protect := v1g.Group("/protected").Use(middleware.ApiKeyAuth())
+	protect.GET("/hello", handlers.HandleHelloWorld)
 }
