@@ -12,7 +12,7 @@ My take on a good project structure for a simple Go API using:
 
 > [!NOTE]
 > run this project:<br>
->```go run main.go```<br>
+>```go run src/main.go```<br>
 >
 > run tests:<br>
 ```go test ./src/app/tests/...```
