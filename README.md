@@ -8,9 +8,7 @@ My take on a good project structure for a simple Go API using:
 * ![alt text](https://img.shields.io/badge/Cors-v1.7.0-orange.svg)
 * ![alt text](https://img.shields.io/badge/Viper-v1.18.2-darkgreen.svg)
 
-<br><br><br>
-
-
+<br>
 
 > [!NOTE]
 > run this project:<br>
