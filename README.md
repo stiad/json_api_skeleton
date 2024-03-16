@@ -18,9 +18,9 @@
 
 to run this project:
 > [!TIP]
->>`API_KEY=somekey go run main.go`
+>`API_KEY=somekey go run main.go`
 
 
 to run tests
 > [!TIP]
->>`go test ./src/app/tests/...`
+>`go test ./src/app/tests/...`
