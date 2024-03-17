@@ -8,6 +8,19 @@ import (
 	"testing"
 )
 
+/*****************
+	  Setup
+ *****************/
+
+func init() {
+	gin.SetMode(gin.TestMode)
+	viper.Set("API_KEY", "test-key")
+}
+
+/*****************
+	  Tests
+ *****************/
+
 func TestServer_handleApiKeyAuth(T *testing.T) {
 	server := NewServer()
 
@@ -32,9 +45,4 @@ func TestServer_handleApiKeyAuth(T *testing.T) {
 			T.Errorf("msg: %s", rec.Body.String())
 		}
 	}
-}
-
-func init() {
-	gin.SetMode(gin.TestMode)
-	viper.Set("API_KEY", "test-key")
 }

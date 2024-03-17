@@ -8,7 +8,15 @@ import (
 )
 
 /*****************
-	 Tests
+	  Setup
+ *****************/
+
+func init() {
+	gin.SetMode(gin.TestMode)
+}
+
+/*****************
+	  Tests
  *****************/
 
 func TestServer_HelloWorld(T *testing.T) {
@@ -32,8 +40,4 @@ func TestServer_HelloWorld(T *testing.T) {
 			T.Errorf("msg: %s", rec.Body.String())
 		}
 	}
-}
-
-func init() {
-	gin.SetMode(gin.TestMode)
 }
