@@ -20,8 +20,6 @@ func init() {
  *****************/
 
 func TestServer_HelloWorld(T *testing.T) {
-	server := NewServer()
-
 	tt := []struct {
 		url                string
 		expectedStatusCode int
@@ -33,7 +31,7 @@ func TestServer_HelloWorld(T *testing.T) {
 	for _, t := range tt {
 		rec := httptest.NewRecorder()
 		req, _ := http.NewRequest("GET", t.url, nil)
-		server.ServeHTTP(rec, req)
+		NewServer().ServeHTTP(rec, req)
 
 		if t.expectedStatusCode != rec.Code {
 			T.Errorf("expected a status code of %d, but got %d", t.expectedStatusCode, rec.Code)

@@ -22,8 +22,6 @@ func init() {
  *****************/
 
 func TestServer_handleApiKeyAuth(T *testing.T) {
-	server := NewServer()
-
 	tt := []struct {
 		apiKey             string
 		url                string
@@ -38,7 +36,7 @@ func TestServer_handleApiKeyAuth(T *testing.T) {
 		req, _ := http.NewRequest("GET", t.url, nil)
 		req.Header.Set("x-api-key", t.apiKey)
 
-		server.ServeHTTP(rec, req)
+		NewServer().ServeHTTP(rec, req)
 
 		if t.expectedStatusCode != rec.Code {
 			T.Errorf("expected a status code of %d, but got %d", t.expectedStatusCode, rec.Code)
