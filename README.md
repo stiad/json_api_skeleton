@@ -15,4 +15,4 @@ My take on a good project structure for a simple Go API using:
 >```go run src/main.go```<br>
 >
 > run tests:<br>
-```go test ./src/app/tests/...```
+```go test ./src/app/...```
