@@ -1,7 +1,6 @@
 package app
 
 import (
-	"database/sql"
 	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
 	"log"
@@ -9,18 +8,18 @@ import (
 )
 
 type Server struct {
-	Engine *gin.Engine
-	DB     *sql.DB
+	engine *gin.Engine
+	// add storage interface here if needed
 }
 
 func NewServer() *Server {
 	engine := gin.Default()
 	engine.Use(cors.Default())
-	s := &Server{engine, &sql.DB{}}
+	s := &Server{engine}
 	s.RegisterRoutes()
 
 	return s
 }
 
-func (s *Server) ServeHTTP(w http.ResponseWriter, r *http.Request) { s.Engine.ServeHTTP(w, r) }
-func (s *Server) Serve(addr string)                                { log.Fatal(s.Engine.Run(addr)) }
+func (s *Server) ServeHTTP(w http.ResponseWriter, r *http.Request) { s.engine.ServeHTTP(w, r) }
+func (s *Server) Serve(addr string)                                { log.Fatal(s.engine.Run(addr)) }
