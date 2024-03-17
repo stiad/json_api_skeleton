@@ -8,14 +8,12 @@ import (
 
 func init() {
 	viper.SetConfigFile("example.env")
-	err := viper.ReadInConfig()
-	if err != nil {
+	if err := viper.ReadInConfig(); err != nil {
 		log.Println("Error reading config file, ", err)
 	}
 	viper.WatchConfig()
 }
 
 func main() {
-	server := app.NewServer()
-	server.Serve(":8081")
+	app.NewServer().Serve(":8081")
 }

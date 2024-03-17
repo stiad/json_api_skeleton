@@ -1,16 +1,15 @@
-package middleware
+package app
 
 import (
 	"github.com/gin-gonic/gin"
 	"github.com/spf13/viper"
-	"github.com/stiad/json_api_skeleton/src/app"
 	"net/http"
 	"net/http/httptest"
 	"testing"
 )
 
-func TestServer_ApiKeyAuth(T *testing.T) {
-	server := setup()
+func TestServer_handleApiKeyAuth(T *testing.T) {
+	server := NewServer()
 
 	tt := []struct {
 		apiKey             string
@@ -35,8 +34,7 @@ func TestServer_ApiKeyAuth(T *testing.T) {
 	}
 }
 
-func setup() *app.Server {
+func init() {
 	gin.SetMode(gin.TestMode)
 	viper.Set("API_KEY", "test-key")
-	return app.NewServer()
 }
