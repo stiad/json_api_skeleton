@@ -38,6 +38,5 @@ func TestServer_ApiKeyAuth(T *testing.T) {
 func setup() *app.Server {
 	gin.SetMode(gin.TestMode)
 	viper.Set("API_KEY", "test-key")
-	server := app.NewServer()
-	return server
+	return app.NewServer()
 }
