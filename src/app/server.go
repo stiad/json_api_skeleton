@@ -15,11 +15,7 @@ type Server struct {
 
 func NewServer() *Server {
 	engine := gin.Default()
-	engine.Use(cors.New(cors.Config{
-		AllowAllOrigins: true,
-		AllowMethods:    []string{"POST", "DELETE", "GET", "OPTIONS", "PUT", "PATCH"},
-		AllowHeaders:    []string{"Authorization", "Content-Type"},
-	}))
+	engine.Use(cors.Default())
 	s := &Server{engine, &sql.DB{}}
 	s.RegisterRoutes()
 
